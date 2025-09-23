@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapist Connect - Sign Up</title>
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login">
+    <h2>Create Account</h2>
+   
+    <form id="SignUp">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" placeholder="Enter a username" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group" >
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+        <p id="passwordError" style="color:red;"></p>
+      </div>
+      
+
+      <div class="input-group" >
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+        <p id="confirmPasswordError" style="color:red;"></p>
+      </div>
+        
+
+      <button type="submit" class="btn">Sign Up</button>
+      <p id="success" style="color:green; font-weight:bold;"></p>
+    </form>
+
+    <p class="signup-text">Already have an account? <a href="index.html">Login here</a></p>
+    
+
+  </div>
+  
+  
+
+  <script>
+
+ 
+
+  document.getElementById('SignUp').onsubmit= function(event){
+    event.preventDefault(); // stop page refresh
+
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let errorMsg = "";
+
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("confirmPasswordError").textContent = "";
+
+    let hasError = false;
+    if (password.length < 8) {
+    document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
+    hasError = true;
+  }
+    if (password !== confirmPassword) {
+    document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+    hasError = true;
+  }
+     if (!hasError) {
+     document.getElementById("success").textContent = "Signup successful! ";
+
+  }
+  };
+
+ 
+  </script> 
+</body>
+</html>
