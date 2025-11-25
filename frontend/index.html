@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mental_health_web_app</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL: ONLINE USERS -->
+    <div class="users-panel">
+        <h2>Online Users</h2>
+        <ul id="userList"></ul>
+    </div>
+
+    <!-- RIGHT PANEL: CHATROOM -->
+    <div class="chat-panel">
+        <div class="chat-header">Chatroom</div>
+        <div id="chatBox" class="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <input type="file" id="imgInput" accept="image/*" style="display:none;">
+            <button id="attachBtn">📎</button>
+            <button id="voiceBtn">🎤</button>
+            <button id="sendBtn">➡️</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
